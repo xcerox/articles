@@ -31,9 +31,15 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.json'],
     alias: {
+      Utils: path.resolve(__dirname, 'src/utils/'),
       Styles: path.resolve(__dirname, 'src/styles/'),
+      Actions: path.resolve(__dirname, 'src/actions/'),
+      Reducers: path.resolve(__dirname, 'src/reducers/'),
+      Services: path.resolve(__dirname, 'src/utils/services/'),
+      Constants: path.resolve(__dirname, 'src/utils/constants/'),
+      Containers: path.resolve(__dirname, 'src/containers/'),
       Components: path.resolve(__dirname, 'src/components/'),
     }
   },
@@ -46,7 +52,6 @@ module.exports = {
 
   devServer: {
     open: true,
-    hot: true,
     port: 4200,
     watchOptions: {
       aggregateTimeout: 300,
