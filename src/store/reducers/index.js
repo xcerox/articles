@@ -1,7 +1,9 @@
  import { combineReducers } from 'redux';
+ import { loadingReducer } from 'Reducers/loading-reducer';
+
 
  const rootReducer = combineReducers({
-  state: (state = {}) => state
+  loading: loadingReducer,
  });
 
  export default rootReducer;

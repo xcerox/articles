@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
 
   devtool: 'eval-source-map',
@@ -33,14 +34,15 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
+      App: path.resolve(__dirname, 'src/app/'),
       Utils: path.resolve(__dirname, 'src/utils/'),
+      Store: path.resolve(__dirname, 'src/store/'),
       Styles: path.resolve(__dirname, 'src/styles/'),
-      Actions: path.resolve(__dirname, 'src/actions/'),
-      Reducers: path.resolve(__dirname, 'src/reducers/'),
+      Actions: path.resolve(__dirname, 'src/utils/actions/'),
+      Reducers: path.resolve(__dirname, 'src/store/reducers/'),
       Services: path.resolve(__dirname, 'src/utils/services/'),
       Constants: path.resolve(__dirname, 'src/utils/constants/'),
-      Containers: path.resolve(__dirname, 'src/containers/'),
-      Components: path.resolve(__dirname, 'src/components/'),
+      Factories: path.resolve(__dirname, 'src/utils/factories/'),
     }
   },
 
@@ -51,6 +53,7 @@ module.exports = {
   ],
 
   devServer: {
+    historyApiFallback: true,
     open: true,
     port: 4200,
     watchOptions: {
