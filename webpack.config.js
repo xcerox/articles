@@ -21,6 +21,7 @@ module.exports = {
           options: {
             cacheDirectory: true,
             presets: ['env', 'react'],
+            plugins: ['transform-object-rest-spread'],
           }
         }
       },
@@ -43,6 +44,8 @@ module.exports = {
       Services: path.resolve(__dirname, 'src/utils/services/'),
       Constants: path.resolve(__dirname, 'src/utils/constants/'),
       Factories: path.resolve(__dirname, 'src/utils/factories/'),
+      Functions: path.resolve(__dirname, 'src/utils/functions/'),
+      Components: path.resolve(__dirname, 'src/components/'),
     }
   },
 
